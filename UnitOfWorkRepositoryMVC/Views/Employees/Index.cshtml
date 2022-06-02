@@ -1,0 +1,54 @@
+﻿@model IEnumerable<UnitOfWorkRepositoryMVC.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div >
+    @Html.ActionLink("Create New", "Create",new { },new { @Class = "btn btn-primary btn-sm link-light text-decoration-none" })
+</div>
+<table class="table table-border table table-striped shadow ">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }, new { @Class = "btn btn-success btn-sm" })|
+                    @Html.ActionLink("Details", "Details", new { id = item.EmployeeID }, new { @Class = "btn btn-primary btn-sm" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID }, new { @Class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
