@@ -8,6 +8,7 @@ using UnitOfWorkRepositoryMVC.UnitOfWorkRepo;
 
 namespace UnitOfWorkRepositoryMVC.Controllers
 {
+    [Authorize]
     public class EmployeesController : Controller
     {
 

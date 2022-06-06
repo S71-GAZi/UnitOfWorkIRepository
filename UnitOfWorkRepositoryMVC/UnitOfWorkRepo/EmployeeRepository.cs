@@ -28,5 +28,5 @@ namespace UnitOfWorkRepositoryMVC.UnitOfWorkRepo
                 return Context.Employees.Where(emp => emp.Gender == Gender).ToList();
         }
        
-    }
+    }  
 }

@@ -9,5 +9,6 @@ namespace UnitOfWorkRepositoryMVC.Models
     public class EmployeeDBContext:DbContext  
     {
        public DbSet<Employee> Employees { get; set; }
+        public DbSet<UserModel> Users { get; set; }
     }
 }

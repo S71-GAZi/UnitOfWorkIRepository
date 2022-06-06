@@ -10,7 +10,7 @@
     @RenderSection("Styles",false)
 </head>
 <body>
-    <div class="navbar navbar-expand bg-dark navbar-dark navbar-fixed-top">
+    <div class="navbar navbar-expand bg-dark navbar-dark navbar-fixed-top  text-white">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,11 +22,29 @@
             </div>
             <div class="Fw"></div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="nav-link">
-                        @Html.ActionLink("Dashboard", "Index", "Employees", new { area = "" }, new { @class = "nav-item text-decoration-none link-light" })
+                <ul class="nav navbar-nav ">
+                    @*<li class="nav-link">
+            @Html.ActionLink("Dashboard", "Index", "Employees", new { area = "" }, new { @class = "nav-item text-decoration-none link-light" })
 
-                    </li>
+        </li>
+        <li class="nav-link">
+            @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-item text-decoration-none link-light" })
+
+        </li>*@
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Dashboard", "Index", "Employees")</li>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        
+                        <li>@Html.ActionLink("Logout", "Logout", "Accounts")</li>
+                        <li class="nav-item text-decoration-none link-light  m-1"><a>Hello - @User.Identity.Name</a></li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Accounts", new { @class = "nav-item text-decoration-none link-light m-1" })</li>
+                    }
+
                 </ul>
             </div>
         </div>

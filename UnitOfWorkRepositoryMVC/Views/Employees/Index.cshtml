@@ -5,7 +5,7 @@
 
 <h2>Index</h2>
 <div >
-    @Html.ActionLink("Create New", "Create",new { }, new { @Class = "btn btn-primary btn-sm link-light text-decoration-none" })
+    @Html.ActionLink("Create New", "AddEmployee", new { }, new { @Class = "btn btn-primary btn-sm link-light text-decoration-none" })
 </div>
 <table class="table table-border table table-striped shadow ">
     <thead>
@@ -43,9 +43,9 @@
                     @Html.DisplayFor(modelItem => item.Address)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }, new { @Class = "btn btn-success btn-sm" })|
-                    @Html.ActionLink("Details", "Details", new { id = item.EmployeeID }, new { @Class = "btn btn-primary btn-sm" }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID }, new { @Class = "btn btn-danger btn-sm" })
+                    @Html.ActionLink("Update", "EditEmployee", new { EmployeeID = item.EmployeeID }, new { @Class = "btn btn-success btn-sm" })|
+                    @Html.ActionLink("Details", "Details", new { EmployeeID = item.EmployeeID }, new { @Class = "btn btn-primary btn-sm" }) |
+                    @Html.ActionLink("Delete", "Delete", new { EmployeeID = item.EmployeeID }, new { @Class = "btn btn-danger btn-sm" })
                 </td>
             </tr>
         }

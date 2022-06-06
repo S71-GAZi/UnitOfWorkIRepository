@@ -17,7 +17,7 @@ textarea {
 }
 .Fw{
     display:flex;
-    width:100%;
+    width:auto;
 }
 .main{
     height:calc(100vh - 170px);
